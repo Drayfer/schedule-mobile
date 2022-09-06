@@ -9,17 +9,26 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.10",
+    "babel-plugin-inline-dotenv": "^1.7.0",
     "expo": "~46.0.9",
+    "expo-constants": "^13.2.4",
+    "expo-notifications": "^0.16.1",
+    "expo-permissions": "^13.2.0",
     "expo-status-bar": "~1.4.0",
+    "expo-updates": "~0.14.5",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.5",
-    "react-native-web": "~0.18.7"
+    "react-native-dotenv": "^3.3.1",
+    "react-native-web": "~0.18.7",
+    "react-native-webview": "^11.23.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.69.1",
+    "@types/react-native-dotenv": "^0.2.0",
     "typescript": "~4.3.5"
   },
   "private": true
