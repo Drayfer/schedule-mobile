@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StyleSheet, StatusBar } from "react-native";
+import { StyleSheet, StatusBar, Text } from "react-native";
 import WebView from "react-native-webview";
 import * as Notification from "expo-notifications";
 import * as Permission from "expo-permissions";

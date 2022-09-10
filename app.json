@@ -1,34 +1,32 @@
 {
   "expo": {
-    "name": "app-schedule",
-    "slug": "app-schedule",
+    "name": "T-app",
+    "slug": "T-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/ticon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/tsplash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#363741"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/tadaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.dan_carlos"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/tfavicon.png"
     }
   }
 }
