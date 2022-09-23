@@ -20,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/tadaptive-icon.png",
+        "foregroundImage": "./assets/tadaptive-icon2.png",
         "backgroundColor": "#FFFFFF"
       },
       "package": "com.dan_carlos"
