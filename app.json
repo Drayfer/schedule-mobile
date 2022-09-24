@@ -19,11 +19,12 @@
       "supportsTablet": true
     },
     "android": {
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/tadaptive-icon2.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.dan_carlos"
+      "package": "com.tapp"
     },
     "web": {
       "favicon": "./assets/tfavicon.png"

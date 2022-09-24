@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Text } from "react-native";
 import WebView from "react-native-webview";
 import * as Notification from "expo-notifications";
 import { useSelector } from "react-redux";
@@ -47,14 +46,14 @@ export default function WebApp() {
         alert("Must use physical device for Push Notifications");
       }
 
-      if (Platform.OS === "android") {
-        Notifications.setNotificationChannelAsync("default", {
-          name: "default",
-          importance: Notifications.AndroidImportance.MAX,
-          vibrationPattern: [0, 250, 250, 250],
-          lightColor: "#FF231F7C",
-        });
-      }
+      // if (Platform.OS === "android") {
+      //   Notifications.setNotificationChannelAsync("default", {
+      //     name: "default",
+      //     importance: Notifications.AndroidImportance.MAX,
+      //     vibrationPattern: [0, 250, 250, 250],
+      //     lightColor: "#FF231F7C",
+      //   });
+      // }
     };
 
     getPermission();
@@ -96,9 +95,6 @@ export default function WebApp() {
         }}
         onMessage={(e) => setMessage(e.nativeEvent.data)}
       />
-      <Text>
-        {userInfo.userId} {userInfo.webviewToken}
-      </Text>
     </>
   );
 }
