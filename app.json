@@ -2,7 +2,7 @@
   "expo": {
     "name": "T-app",
     "slug": "T-app",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/ticon.png",
     "userInterfaceStyle": "light",
@@ -24,10 +24,16 @@
         "foregroundImage": "./assets/tadaptive-icon2.png",
         "backgroundColor": "#FFFFFF"
       },
-      "package": "com.tapp"
+      "package": "com.tapphelper",
+      "versionCode": 3
     },
     "web": {
       "favicon": "./assets/tfavicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "3256af88-975d-47db-a99c-5cb9b02f3e00"
+      }
     }
   }
 }
