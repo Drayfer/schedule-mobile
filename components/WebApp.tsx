@@ -12,6 +12,7 @@ import {
 import axios from "axios";
 import * as Notifications from "expo-notifications";
 import Constants from "expo-constants";
+import { ActivityIndicator, Platform, View } from "react-native";
 
 Notification.setNotificationHandler({
   handleNotification: async () => ({
@@ -24,6 +25,7 @@ Notification.setNotificationHandler({
 export default function WebApp() {
   const dispatch = useDispatch();
   const userInfo = useSelector((state: RootState) => state.userInfo);
+  const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -46,14 +48,14 @@ export default function WebApp() {
         alert("Must use physical device for Push Notifications");
       }
 
-      // if (Platform.OS === "android") {
-      //   Notifications.setNotificationChannelAsync("default", {
-      //     name: "default",
-      //     importance: Notifications.AndroidImportance.MAX,
-      //     vibrationPattern: [0, 250, 250, 250],
-      //     lightColor: "#FF231F7C",
-      //   });
-      // }
+      if (Platform.OS === "android") {
+        Notifications.setNotificationChannelAsync("default", {
+          name: "default",
+          importance: Notifications.AndroidImportance.MAX,
+          vibrationPattern: [0, 250, 250, 250],
+          lightColor: "#FF231F7C",
+        });
+      }
     };
 
     getPermission();
@@ -87,14 +89,49 @@ export default function WebApp() {
     }
   }, [userInfo]);
 
+  const ActivityIndicatorElement = () => {
+    return (
+      <View
+        style={{
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#363741",
+        }}
+      >
+        <ActivityIndicator color="white" size="large" />
+      </View>
+    );
+  };
+
   return (
     <>
-      <WebView
-        source={{
-          uri: process.env.REACT_APP_URL || "",
-        }}
-        onMessage={(e) => setMessage(e.nativeEvent.data)}
-      />
+      {Platform.OS === "web" ? (
+        <iframe
+          src={process.env.REACT_APP_URL}
+          height={"100%"}
+          width={"100%"}
+        />
+      ) : (
+        <>
+          {isLoading && ActivityIndicatorElement()}
+          <View
+            style={
+              isLoading
+                ? {}
+                : { width: "100%", height: "100%", backgroundColor: "#FFF" }
+            }
+          >
+            <WebView
+              source={{
+                uri: process.env.REACT_APP_URL || "",
+              }}
+              onMessage={(e) => setMessage(e.nativeEvent.data)}
+              onLoad={() => setIsLoading(false)}
+            />
+          </View>
+        </>
+      )}
     </>
   );
 }
