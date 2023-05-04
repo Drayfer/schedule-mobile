@@ -108,7 +108,7 @@ export default function WebApp() {
     <>
       {Platform.OS === "web" ? (
         <iframe
-          src={process.env.REACT_APP_URL}
+          src={"https://www.t-app.icu/login"}
           height={"100%"}
           width={"100%"}
         />
@@ -124,7 +124,7 @@ export default function WebApp() {
           >
             <WebView
               source={{
-                uri: process.env.REACT_APP_URL || "",
+                uri: "https://www.t-app.icu/login",
               }}
               onMessage={(e) => setMessage(e.nativeEvent.data)}
               onLoad={() => setIsLoading(false)}
